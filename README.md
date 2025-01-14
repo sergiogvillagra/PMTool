@@ -11,6 +11,7 @@ Las actividades se pueden descomponer en varios niveles de sub actividades.
 1.Actividad A
 1.1 Actividad B
 1.1.1 Actividad C
+
 1.2 Actividad D
 
 2.Actividad E
