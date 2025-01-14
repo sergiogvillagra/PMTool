@@ -24,7 +24,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
-        java-version: 21 # Usa la versión de Java especificada en tu build.gradle
+        java-version: 21
 
     # Paso 3: Cachear dependencias de Gradle
     - name: Cache Gradle dependencies
@@ -37,8 +37,12 @@ jobs:
 
     # Paso 4: Compilar el proyecto
     - name: Build with Gradle
-      run: ./gradlew build --stacktrace
+      run: |
+        cd app
+        ./gradlew build --stacktrace
 
-    # Paso 5: Ejecutar pruebas
-    #- name: Run tests with Gradle
-    #  run: ./gradlew test --stacktrace
+    # Paso 5: Ejecutar pruebas (opcional si tienes pruebas)
+    - name: Run tests with Gradle
+      run: |
+        cd app
+        ./gradlew test --stacktrace
