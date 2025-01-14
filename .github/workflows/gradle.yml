@@ -1,32 +1,19 @@
 # Este workflow tiene como objetivo compilar el código y ejecutar las pruebas definidas
 
-name: Java CI with Gradle
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # Paso 1: Configurar el repositorio
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Paso 2: Configurar Java
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
         java-version: 21
 
-    # Paso 3: Cachear dependencias de Gradle
     - name: Cache Gradle dependencies
       uses: actions/cache@v3
       with:
@@ -35,14 +22,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
 
-    # Paso 4: Compilar el proyecto
     - name: Build with Gradle
-      run: |
-        cd app
-        ./gradlew build --stacktrace
+      run: ./gradlew build --stacktrace
 
-    # Paso 5: Ejecutar pruebas (opcional si tienes pruebas)
     - name: Run tests with Gradle
-      run: |
-        cd app
-        ./gradlew test --stacktrace
+      run: ./gradlew test --stacktrace
