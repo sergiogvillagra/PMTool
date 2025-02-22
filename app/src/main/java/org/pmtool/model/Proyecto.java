@@ -1,4 +1,4 @@
-package org.pmtool;
+package org.pmtool.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

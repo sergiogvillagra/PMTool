@@ -1,4 +1,6 @@
-package org.pmtool;
+package org.pmtool.manager;
+
+import org.pmtool.model.Proyecto;
 
 import java.util.ArrayList;
 import java.util.List;

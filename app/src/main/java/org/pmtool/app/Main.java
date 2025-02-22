@@ -1,4 +1,8 @@
-package org.pmtool;
+package org.pmtool.app;
+
+import org.pmtool.model.Proyecto;
+import org.pmtool.manager.GerenteProyecto;
+import org.pmtool.manager.GerentePortafolio;
 
 import java.time.LocalDate;
 
@@ -37,4 +41,4 @@ public class Main {
             mostrarActividadConJerarquia(subactividad, prefix + "  ");
         }
     }
-}
+} 

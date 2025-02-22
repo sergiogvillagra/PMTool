@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.pmtool.Main"
+    mainClass = "org.pmtool.app.Main"
 }
 
 tasks.named<Test>("test") {
