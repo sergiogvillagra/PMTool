@@ -1,4 +1,8 @@
-# Este workflow tiene como objetivo compilar el código y ejecutar las pruebas definidas
+# Este workflow realiza las siguientes tareas:
+# 1. Compila el proyecto Java usando Gradle
+# 2. Ejecuta todos los tests unitarios
+# 3. Archiva los resultados de los tests y los artefactos compilados
+# 4. Se ejecuta en cada push a main y en pull requests
 
 name: Build and Test PMTool
 
