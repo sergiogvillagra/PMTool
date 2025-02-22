@@ -44,14 +44,14 @@ git remote -v
 # Debería mostrar solo tu repositorio privado como origin
 ```
 
-### Dar Acceso al Profesor
+### Dar Acceso a los Docentes
 
-Para que el profesor pueda revisar tu trabajo:
+Para que cada docente pueda revisar el trabajo:
 
 1. En GitHub, ve a tu repositorio
 2. Click en "Settings" → "Collaborators"
 3. Click en "Add people"
-4. Agrega el usuario del profesor: `sergiogvillagra`
+4. Agrega el usuario de los docentes: `sergiogvillagra`,`gdebenedetti`,`tbruno`,`sergiogvillagra`
 
 ## Requisitos Previos
 
