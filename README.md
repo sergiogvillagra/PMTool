@@ -1,5 +1,7 @@
 # PMTool - Herramienta de Gestión de Proyectos
 
+[![Java CI with Gradle](https://github.com/sergiogvillagra/PMTool/actions/workflows/gradle.yml/badge.svg)](https://github.com/sergiogvillagra/PMTool/actions/workflows/gradle.yml)
+
 PMTool es una aplicación Java para la gestión de proyectos que implementa la metodología EDT (Estructura de Desglose de Trabajo). Permite la creación y gestión de proyectos, actividades y subactividades con una estructura jerárquica.
 
 ## Instrucciones para Estudiantes
@@ -199,3 +201,14 @@ chmod +x gradlew
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 FIUBA/Ingeniería de Software I/Métodos y Modelos en Ingeniería de Software I/Análisis de la Información
+
+## Integración Continua
+
+El proyecto utiliza GitHub Actions para ejecutar automáticamente los tests y verificar la compilación en cada push y pull request:
+
+- Compila el proyecto
+- Ejecuta todos los tests
+- Genera y almacena reportes de tests
+- Verifica la integración en Java 21
+
+Puedes ver el estado de las ejecuciones en la pestaña "Actions" del repositorio o haciendo clic en el badge de estado al principio de este README.
