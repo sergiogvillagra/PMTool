@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    java
 }
 
 repositories {
@@ -17,12 +18,11 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation(libs.junit.jupiter)
-
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
-    implementation(libs.guava)
+    implementation("com.google.guava:guava:32.1.3-jre")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,10 +34,16 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.pmtool.app.Main"
+    mainClass.set("org.pmtool.app.Main")
 }
 
-tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
+tasks.test {
     useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
+}
+
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
 }
