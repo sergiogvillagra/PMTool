@@ -11,7 +11,7 @@ Para trabajar en este proyecto como parte del curso, debes crear tu propio repos
 1. **Crear un nuevo repositorio privado en GitHub**:
    - Ve a [GitHub](https://github.com)
    - Haz clic en el botón "+" y selecciona "New repository"
-   - Nombra tu repositorio (ejemplo: `PMTool-TuNombre`)
+   - Nombra tu repositorio (ejemplo: `PMTool-NumeroDePadron`)
    - Selecciona "Private"
    - NO inicialices el repositorio con README, .gitignore o licencia
    - Haz clic en "Create repository"
@@ -28,7 +28,7 @@ cd PMTool-temp
 git remote remove origin
 
 # Agregar tu repositorio privado como nuevo origin
-git remote add origin https://github.com/TU-USUARIO/PMTool-TuNombre.git
+git remote add origin https://github.com/TU-USUARIO/PMTool-NumeroDePadron.git
 
 # Subir el código a tu repositorio privado
 git push -u origin main
