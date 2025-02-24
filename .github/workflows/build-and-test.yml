@@ -42,18 +42,23 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: app/build/reports/tests/test
+          path: |
+            **/build/reports/tests/
+            **/build/test-results/
 
       - name: Archive build artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: app/build/libs
+          path: |
+            **/build/libs/
+            **/build/distributions/
 
       - name: Archive Checkstyle results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: checkstyle-results
-          path: app/build/reports/checkstyle/
+          path: |
+            **/build/reports/checkstyle/

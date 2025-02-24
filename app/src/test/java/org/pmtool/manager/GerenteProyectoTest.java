@@ -2,7 +2,7 @@ package org.pmtool.manager;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
 import org.pmtool.model.Proyecto;
 import java.time.LocalDate;
 
@@ -25,7 +25,7 @@ public class GerenteProyectoTest {
         // La planificación no debería lanzar excepción
         
         // Verificar que lanza excepción cuando las fechas están invertidas
-        assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             gerente.planificarProyecto(proyecto, fin, inicio);
         });
     }
@@ -34,9 +34,9 @@ public class GerenteProyectoTest {
     void testCrearActividad() {
         Proyecto.Actividad actividad = gerente.crearActividad(proyecto, "1", "Nueva Actividad", 80);
         
-        assertNotNull(actividad);
-        assertEquals("1.1", actividad.getNumeroEDT());
-        assertEquals("Nueva Actividad", actividad.toString().split(",")[1].split("'")[1]);
+        Assertions.assertNotNull(actividad);
+        Assertions.assertEquals("1.1", actividad.getNumeroEDT());
+        Assertions.assertEquals("Nueva Actividad", actividad.toString().split(",")[1].split("'")[1]);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class GerenteProyectoTest {
         // La planificación no debería lanzar excepción
         
         // Verificar que lanza excepción cuando las fechas están invertidas
-        assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             gerente.planificarActividad(actividad, fin, inicio);
         });
     }

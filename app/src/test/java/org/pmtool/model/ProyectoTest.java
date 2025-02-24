@@ -2,7 +2,7 @@ package org.pmtool.model;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
 import java.time.LocalDate;
 
 public class ProyectoTest {
@@ -15,9 +15,9 @@ public class ProyectoTest {
 
     @Test
     void testCreacionProyecto() {
-        assertNotNull(proyecto);
-        assertEquals("Proyecto Test", proyecto.toString().split(",")[1].split("'")[1]);
-        assertEquals("Planificado", proyecto.toString().split(",")[2].split("'")[1]);
+        Assertions.assertNotNull(proyecto);
+        Assertions.assertEquals("Proyecto Test", proyecto.toString().split(",")[1].split("'")[1]);
+        Assertions.assertEquals("Planificado", proyecto.toString().split(",")[2].split("'")[1]);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class ProyectoTest {
         // La planificación no debería lanzar excepción
         
         // Verificar que lanza excepción cuando las fechas están invertidas
-        assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             proyecto.planificarFechas(fin, inicio);
         });
     }
@@ -39,8 +39,8 @@ public class ProyectoTest {
         Proyecto.Actividad actividad = proyecto.new Actividad("1.1", "Actividad Test", 40);
         proyecto.agregarActividad(actividad);
         
-        assertEquals(1, proyecto.getActividades().size());
-        assertTrue(proyecto.getActividades().contains(actividad));
+        Assertions.assertEquals(1, proyecto.getActividades().size());
+        Assertions.assertTrue(proyecto.getActividades().contains(actividad));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class ProyectoTest {
         
         actividad.agregarSubactividad(subactividad);
         
-        assertEquals(1, actividad.getSubactividades().size());
-        assertEquals("1.1", subactividad.getNumeroEDT());
+        Assertions.assertEquals(1, actividad.getSubactividades().size());
+        Assertions.assertEquals("1.1", subactividad.getNumeroEDT());
     }
 } 

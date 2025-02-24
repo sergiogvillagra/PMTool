@@ -2,7 +2,7 @@ package org.pmtool.manager;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
 import org.pmtool.model.Proyecto;
 
 public class GerentePortafolioTest {
@@ -21,8 +21,8 @@ public class GerentePortafolioTest {
         
         Proyecto proyecto = gerentePortafolio.crearProyecto(nombreProyecto, horasEstimadas, presupuesto);
         
-        assertNotNull(proyecto);
-        assertEquals(nombreProyecto, proyecto.toString().split(",")[1].split("'")[1]);
-        assertEquals("Planificado", proyecto.toString().split(",")[2].split("'")[1]);
+        Assertions.assertNotNull(proyecto);
+        Assertions.assertEquals(nombreProyecto, proyecto.toString().split(",")[1].split("'")[1]);
+        Assertions.assertEquals("Planificado", proyecto.toString().split(",")[2].split("'")[1]);
     }
 } 

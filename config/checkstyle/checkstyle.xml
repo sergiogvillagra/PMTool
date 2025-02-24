@@ -20,6 +20,11 @@
         <property name="eachLine" value="true"/>
     </module>
 
+    <!-- Verificar longitud de línea -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+    </module>
+
     <module name="TreeWalker">
         <!-- Verificar convenciones de nombres -->
         <module name="ConstantName"/>
@@ -37,11 +42,6 @@
         <module name="IllegalImport"/>
         <module name="RedundantImport"/>
         <module name="UnusedImports"/>
-
-        <!-- Verificar longitud de línea -->
-        <module name="LineLength">
-            <property name="max" value="120"/>
-        </module>
 
         <!-- Verificar estilo de código -->
         <module name="EmptyBlock"/>
