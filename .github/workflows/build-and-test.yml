@@ -31,6 +31,9 @@ jobs:
       - name: Grant execute permission for Gradlew
         run: chmod +x gradlew
 
+      - name: Run Checkstyle
+        run: ./gradlew checkstyleMain checkstyleTest
+
       - name: Build and test with Gradle
         run: ./gradlew build
 
@@ -47,3 +50,10 @@ jobs:
         with:
           name: build-artifacts
           path: app/build/libs
+
+      - name: Archive Checkstyle results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkstyle-results
+          path: app/build/reports/checkstyle/
