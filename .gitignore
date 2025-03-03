@@ -36,6 +36,7 @@ build/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.vscode/settings.json
 
 # IDE - IntelliJ IDEA
 .idea/
@@ -69,3 +70,4 @@ Desktop.ini
 
 # Gradle Wrapper jar file - should be included in version control
 !gradle/wrapper/gradle-wrapper.jar
+
