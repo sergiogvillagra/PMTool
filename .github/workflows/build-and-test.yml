@@ -1,8 +1,9 @@
 # Este workflow realiza las siguientes tareas:
 # 1. Compila el proyecto Java usando Gradle
 # 2. Ejecuta todos los tests unitarios
-# 3. Archiva los resultados de los tests y los artefactos compilados
-# 4. Se ejecuta en cada push a main y en pull requests
+# 3. Ejecuta los tests de comportamiento con Cucumber
+# 4. Archiva los resultados de los tests y los artefactos compilados
+# 5. Se ejecuta en cada push a main y en pull requests
 
 name: Build and Test PMTool
 
@@ -37,6 +38,9 @@ jobs:
       - name: Build and test with Gradle
         run: ./gradlew build
 
+      - name: Execute Cucumber tests
+        run: ./gradlew cucumber
+
       - name: Archive test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -45,6 +49,7 @@ jobs:
           path: |
             **/build/reports/tests/
             **/build/test-results/
+            **/build/reports/cucumber/
 
       - name: Archive build artifacts
         if: always()
