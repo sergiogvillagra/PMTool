@@ -53,7 +53,7 @@ Para que cada docente pueda revisar el trabajo:
 1. En GitHub, ve a tu repositorio
 2. Click en "Settings" → "Collaborators"
 3. Click en "Add people"
-4. Agrega el usuario de los docentes: `sergiogvillagra`,`gdebenedetti`,`tbruno`,`sergiogvillagra`
+4. Agrega el usuario de los docentes: `sergiogvillagra`,`gdebenedetti`,`tbruno`,`leof777`
 
 ## Requisitos Previos
 
