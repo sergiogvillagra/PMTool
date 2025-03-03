@@ -1,7 +1,7 @@
 # Este workflow realiza las siguientes tareas:
 # 1. Compila el proyecto Java usando Gradle
-# 2. Ejecuta todos los tests unitarios
-# 3. Ejecuta los tests de comportamiento con Cucumber
+# 2. Verifica el formato del codigo estilo Java con Checkstyle
+# 3. Ejecuta todos los tests unitarios y de comportamiento con Cucumber
 # 4. Archiva los resultados de los tests y los artefactos compilados
 # 5. Se ejecuta en cada push a main y en pull requests
 
@@ -37,9 +37,6 @@ jobs:
 
       - name: Build and test with Gradle
         run: ./gradlew build
-
-      - name: Execute Cucumber tests
-        run: ./gradlew cucumber
 
       - name: Archive test results
         if: always()
