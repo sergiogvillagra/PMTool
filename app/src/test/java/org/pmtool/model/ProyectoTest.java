@@ -16,8 +16,10 @@ public class ProyectoTest {
     @Test
     void testCreacionProyecto() {
         Assertions.assertNotNull(proyecto);
-        Assertions.assertEquals("Proyecto Test", proyecto.toString().split(",")[1].split("'")[1]);
-        Assertions.assertEquals("Planificado", proyecto.toString().split(",")[2].split("'")[1]);
+        Assertions.assertEquals("Proyecto Test", proyecto.getNombre());
+        Assertions.assertTrue(proyecto.isPlanificado());
+        Assertions.assertTrue(proyecto.getTotalHorasEstimadas() > 0);
+        Assertions.assertTrue(proyecto.getPresupuesto() > 0);
     }
 
     @Test

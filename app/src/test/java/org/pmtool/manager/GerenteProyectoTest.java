@@ -36,7 +36,7 @@ public class GerenteProyectoTest {
         
         Assertions.assertNotNull(actividad);
         Assertions.assertEquals("1.1", actividad.getNumeroEDT());
-        Assertions.assertEquals("Nueva Actividad", actividad.toString().split(",")[1].split("'")[1]);
+        Assertions.assertEquals("Nueva Actividad", actividad.getNombre());
     }
 
     @Test
