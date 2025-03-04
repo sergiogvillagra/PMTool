@@ -148,7 +148,7 @@ org.pmtool
 ├── app
 │   └── Main.java           # Punto de entrada de la aplicación
 ├── model
-│   └── Proyecto.java       # Modelo de dominio
+│   └── Proyecto.java       # Clase de dominio
 └── manager
     ├── GerentePortafolio.java  # Gestión de portafolio
     └── GerenteProyecto.java    # Gestión de proyectos
@@ -174,6 +174,17 @@ Los reportes se generan en:
 - HTML: `app/build/reports/tests/test/index.html`
 - XML: `app/build/test-results/test`
 
+## Integración Continua
+
+El proyecto utiliza GitHub Actions para ejecutar automáticamente los tests y verificar la compilación en cada push y pull request:
+
+- Compila el proyecto
+- Ejecuta todos los tests
+- Genera y almacena reportes de tests
+- Verifica la integración en Java 21
+
+Puedes ver el estado de las ejecuciones en la pestaña "Actions" del repositorio o haciendo clic en el badge de estado al principio de este README.
+
 ## Solución de Problemas
 
 ### Error: JAVA_HOME no está configurado
@@ -188,27 +199,8 @@ En sistemas Unix:
 chmod +x gradlew
 ```
 
-## Contribuir
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 FIUBA/Ingeniería de Software I/Métodos y Modelos en Ingeniería de Software I/Análisis de la Información
-
-## Integración Continua
-
-El proyecto utiliza GitHub Actions para ejecutar automáticamente los tests y verificar la compilación en cada push y pull request:
-
-- Compila el proyecto
-- Ejecuta todos los tests
-- Genera y almacena reportes de tests
-- Verifica la integración en Java 21
-
-Puedes ver el estado de las ejecuciones en la pestaña "Actions" del repositorio o haciendo clic en el badge de estado al principio de este README.
