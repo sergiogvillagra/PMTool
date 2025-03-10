@@ -118,25 +118,19 @@ Fedora:
 sudo dnf install gradle
 ```
 
-## Instalación
+## Compilar, correr, testear
 
-1. Clona el repositorio:
-```bash
-git clone https://github.com/sergiogvillagra/PMTool.git
-cd PMTool
-```
-
-2. Compila el proyecto:
+1. Compilar el proyecto:
 ```bash
 ./gradlew clean build
 ```
 
-3. Ejecuta los tests:
+2. Ejecutar los tests:
 ```bash
 ./gradlew test
 ```
 
-4. Ejecuta la aplicación:
+3. Ejecutar la aplicación:
 ```bash
 ./gradlew run
 ```
@@ -148,10 +142,10 @@ org.pmtool
 ├── app
 │   └── Main.java           # Punto de entrada de la aplicación
 ├── model
-│   └── Proyecto.java       # Clase de dominio
+│   └── Proyecto.java       # Clase de dominio, incluye la clase Actividad
 └── manager
-    ├── GerentePortafolio.java  # Gestión de portafolio
-    └── GerenteProyecto.java    # Gestión de proyectos
+    ├── GerentePortafolio.java  # Gestiona portafolios
+    └── GerenteProyecto.java    # Gestiona proyectos
 ```
 
 ## Características
