@@ -38,7 +38,7 @@ public class ProyectoTest {
 
     @Test
     void testAgregarActividad() {
-        Proyecto.Actividad actividad = proyecto.new Actividad("1.1", "Actividad Test", 40);
+        Actividad actividad = new Actividad("1.1", "Actividad Test", 40);
         proyecto.agregarActividad(actividad);
         
         Assertions.assertEquals(1, proyecto.getActividades().size());
@@ -47,12 +47,38 @@ public class ProyectoTest {
 
     @Test
     void testActividadJerarquia() {
-        Proyecto.Actividad actividad = proyecto.new Actividad("1", "Actividad Principal", 40);
-        Proyecto.Actividad subactividad = proyecto.new Actividad("1.1", "Subactividad", 20);
+        Actividad actividad = new Actividad("1", "Actividad Principal", 40);
+        Actividad subactividad = new Actividad("1.1", "Subactividad", 20);
         
         actividad.agregarSubactividad(subactividad);
         
         Assertions.assertEquals(1, actividad.getSubactividades().size());
         Assertions.assertEquals("1.1", subactividad.getNumeroEDT());
+    }
+
+    @Test
+    void testFinalizarProyecto() {
+        Actividad actividad = new Actividad("1.1", "Actividad Test", 40);
+        proyecto.agregarActividad(actividad);
+        
+        // Activar y desactivar la actividad
+        actividad.activar();
+        actividad.desactivar();
+        
+        // Finalizar el proyecto
+        proyecto.finalizar(LocalDate.now());
+        
+        Assertions.assertEquals(Proyecto.EstadoProyecto.FINALIZADO, proyecto.getEstado());
+    }
+
+    @Test
+    void testFinalizarProyectoConActividadIncompleta() {
+        Actividad actividad = new Actividad("1.1", "Actividad Test", 40);
+        proyecto.agregarActividad(actividad);
+        
+        // Intentar finalizar el proyecto sin completar la actividad
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            proyecto.finalizar(LocalDate.now());
+        });
     }
 } 

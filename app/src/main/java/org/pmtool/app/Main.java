@@ -1,6 +1,7 @@
 package org.pmtool.app;
 
 import org.pmtool.model.Proyecto;
+import org.pmtool.model.Actividad;
 import org.pmtool.manager.GerenteProyecto;
 import org.pmtool.manager.GerentePortafolio;
 
@@ -16,11 +17,11 @@ public class Main {
         gerenteProyecto.planificarProyecto(proyecto, LocalDate.of(2024, 1, 1), LocalDate.of(2024, 6, 30));
 
         // Agregar actividades con esquema EDT
-        Proyecto.Actividad actividad1 = gerenteProyecto.crearActividad(proyecto, "1", "Actividad Principal", 100);
+        Actividad actividad1 = gerenteProyecto.crearActividad(proyecto, "1", "Actividad Principal", 100);
         gerenteProyecto.planificarActividad(actividad1, LocalDate.of(2024, 1, 15), LocalDate.of(2024, 2, 15));
         proyecto.agregarActividad(actividad1);
 
-        Proyecto.Actividad subActividad1 = gerenteProyecto.crearActividad(
+        Actividad subActividad1 = gerenteProyecto.crearActividad(
             proyecto, 
             actividad1.getNumeroEDT(), 
             "Subactividad 1", 
@@ -29,7 +30,7 @@ public class Main {
         gerenteProyecto.planificarActividad(subActividad1, LocalDate.of(2024, 1, 20), LocalDate.of(2024, 2, 10));
         actividad1.agregarSubactividad(subActividad1);
 
-        Proyecto.Actividad subSubActividad1 = gerenteProyecto.crearActividad(
+        Actividad subSubActividad1 = gerenteProyecto.crearActividad(
             proyecto, 
             subActividad1.getNumeroEDT(), 
             "Sub-subactividad 1", 
@@ -40,14 +41,14 @@ public class Main {
 
         // Mostrar actividades con numeración EDT
         System.out.println(proyecto);
-        for (Proyecto.Actividad actividad : proyecto.getActividades()) {
+        for (Actividad actividad : proyecto.getActividades()) {
             mostrarActividadConJerarquia(actividad, "");
         }
     }
 
-    private static void mostrarActividadConJerarquia(Proyecto.Actividad actividad, String prefix) {
+    private static void mostrarActividadConJerarquia(Actividad actividad, String prefix) {
         System.out.println(prefix + actividad);
-        for (Proyecto.Actividad subactividad : actividad.getSubactividades()) {
+        for (Actividad subactividad : actividad.getSubactividades()) {
             mostrarActividadConJerarquia(subactividad, prefix + "  ");
         }
     }

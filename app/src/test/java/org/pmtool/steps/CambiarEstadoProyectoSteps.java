@@ -6,9 +6,9 @@ import java.time.LocalDate;
 
 import org.pmtool.manager.GerenteProyecto;
 import org.pmtool.model.Proyecto;
-import org.pmtool.model.Proyecto.Actividad;
-import org.pmtool.model.Proyecto.Actividad.EstadoActividad;
+import org.pmtool.model.Actividad;
 import org.pmtool.model.Proyecto.EstadoProyecto;
+import org.pmtool.model.Actividad.EstadoActividad;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;

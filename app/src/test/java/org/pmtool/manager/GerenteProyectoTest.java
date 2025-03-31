@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Assertions;
 import org.pmtool.model.Proyecto;
+import org.pmtool.model.Actividad;
 import java.time.LocalDate;
 
 public class GerenteProyectoTest {
@@ -32,7 +33,7 @@ public class GerenteProyectoTest {
 
     @Test
     void testCrearActividad() {
-        Proyecto.Actividad actividad = gerente.crearActividad(proyecto, "1", "Nueva Actividad", 80);
+        Actividad actividad = gerente.crearActividad(proyecto, "1", "Nueva Actividad", 80);
         
         Assertions.assertNotNull(actividad);
         Assertions.assertEquals("1.1", actividad.getNumeroEDT());
@@ -41,7 +42,7 @@ public class GerenteProyectoTest {
 
     @Test
     void testPlanificarActividad() {
-        Proyecto.Actividad actividad = gerente.crearActividad(proyecto, "1", "Actividad Test", 40);
+        Actividad actividad = gerente.crearActividad(proyecto, "1", "Actividad Test", 40);
         LocalDate inicio = LocalDate.of(2024, 2, 1);
         LocalDate fin = LocalDate.of(2024, 3, 31);
         

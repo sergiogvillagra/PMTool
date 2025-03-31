@@ -1,6 +1,7 @@
 package org.pmtool.manager;
 
 import org.pmtool.model.Proyecto;
+import org.pmtool.model.Actividad;
 
 import java.time.LocalDate;
 
@@ -14,12 +15,12 @@ public class GerenteProyecto {
         proyecto.finalizar(fechaFinReal);
     }
 
-    public Proyecto.Actividad crearActividad(Proyecto proyecto, String numeroPadre, String nombre, int horas) {
+    public Actividad crearActividad(Proyecto proyecto, String numeroPadre, String nombre, int horas) {
         String numeroEDT = numeroPadre + "." + (proyecto.getActividades().size() + 1);
-        return proyecto.new Actividad(numeroEDT, nombre, horas);
+        return new Actividad(numeroEDT, nombre, horas);
     }
 
-    public void planificarActividad(Proyecto.Actividad actividad, LocalDate inicio, LocalDate fin) {
+    public void planificarActividad(Actividad actividad, LocalDate inicio, LocalDate fin) {
         actividad.planificarFechas(inicio, fin);
     }
 }
