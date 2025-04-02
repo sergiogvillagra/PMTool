@@ -1,6 +1,6 @@
 # PMTool - Herramienta de Gestión de Proyectos
 
-[![Java CI with Gradle](https://github.com/sergiogvillagra/PMTool/actions/workflows/gradle.yml/badge.svg)](https://github.com/sergiogvillagra/PMTool/actions/workflows/gradle.yml)
+[![Java CI with Gradle](https://github.com/sergiogvillagra/PMTool/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/sergiogvillagra/PMTool/actions/workflows/build-and-test.yml)
 
 PMTool es una aplicación Java para la gestión de proyectos que implementa la metodología EDT (Estructura de Desglose de Trabajo). Permite la creación y gestión de proyectos, actividades y subactividades con una estructura jerárquica.
 
@@ -53,7 +53,7 @@ Para que cada docente pueda revisar el trabajo:
 1. En GitHub, ve a tu repositorio
 2. Click en "Settings" → "Collaborators"
 3. Click en "Add people"
-4. Agrega el usuario de los docentes: `sergiogvillagra`,`gdebenedetti`,`tbruno`,`sergiogvillagra`
+4. Agrega el usuario de los docentes: `sergiogvillagra`,`gdebenedetti`,`tbruno`,`leof777`
 
 ## Requisitos Previos
 
@@ -118,25 +118,19 @@ Fedora:
 sudo dnf install gradle
 ```
 
-## Instalación
+## Compilar, correr, testear
 
-1. Clona el repositorio:
-```bash
-git clone https://github.com/sergiogvillagra/PMTool.git
-cd PMTool
-```
-
-2. Compila el proyecto:
+1. Compilar el proyecto:
 ```bash
 ./gradlew clean build
 ```
 
-3. Ejecuta los tests:
+2. Ejecutar los tests:
 ```bash
 ./gradlew test
 ```
 
-4. Ejecuta la aplicación:
+3. Ejecutar la aplicación:
 ```bash
 ./gradlew run
 ```
@@ -148,10 +142,10 @@ org.pmtool
 ├── app
 │   └── Main.java           # Punto de entrada de la aplicación
 ├── model
-│   └── Proyecto.java       # Modelo de dominio
+│   └── Proyecto.java       # Clase de dominio, incluye la clase Actividad
 └── manager
-    ├── GerentePortafolio.java  # Gestión de portafolio
-    └── GerenteProyecto.java    # Gestión de proyectos
+    ├── GerentePortafolio.java  # Gestiona portafolios
+    └── GerenteProyecto.java    # Gestiona proyectos
 ```
 
 ## Características
@@ -174,6 +168,17 @@ Los reportes se generan en:
 - HTML: `app/build/reports/tests/test/index.html`
 - XML: `app/build/test-results/test`
 
+## Integración Continua
+
+El proyecto utiliza GitHub Actions para ejecutar automáticamente los tests y verificar la compilación en cada push y pull request:
+
+- Compila el proyecto
+- Ejecuta todos los tests
+- Genera y almacena reportes de tests
+- Verifica la integración en Java 21
+
+Puedes ver el estado de las ejecuciones en la pestaña "Actions" del repositorio o haciendo clic en el badge de estado al principio de este README.
+
 ## Solución de Problemas
 
 ### Error: JAVA_HOME no está configurado
@@ -188,27 +193,8 @@ En sistemas Unix:
 chmod +x gradlew
 ```
 
-## Contribuir
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 FIUBA/Ingeniería de Software I/Métodos y Modelos en Ingeniería de Software I/Análisis de la Información
-
-## Integración Continua
-
-El proyecto utiliza GitHub Actions para ejecutar automáticamente los tests y verificar la compilación en cada push y pull request:
-
-- Compila el proyecto
-- Ejecuta todos los tests
-- Genera y almacena reportes de tests
-- Verifica la integración en Java 21
-
-Puedes ver el estado de las ejecuciones en la pestaña "Actions" del repositorio o haciendo clic en el badge de estado al principio de este README.
